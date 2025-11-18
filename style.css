@@ -1,0 +1,962 @@
+:root {
+  --bg: #000;
+  --text: #fff;
+  --muted: rgba(255, 255, 255, 0.8);
+  --accent: #1e90ff;
+  --nav-height: 64px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  background: #fff;
+  color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--bg);
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px;
+  height: var(--nav-height);
+}
+
+/* logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* links */
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-links a {
+  display: inline-block;
+  padding: 8px 12px;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  outline: none;
+}
+
+/* language dropdown */
+.lang {
+  position: relative;
+}
+.lang-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.lang-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.08);
+}
+.lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-width: 140px;
+  padding: 6px;
+  border-radius: 8px;
+  list-style: none;
+  margin: 0;
+  display: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+.lang-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-radius: 6px;
+}
+.lang-menu button:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+.lang.open .lang-menu {
+  display: block;
+}
+
+/* hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text);
+}
+.nav-toggle .hamburger {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  display: block;
+  position: relative;
+  border-radius: 2px;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+.nav-toggle .hamburger::before {
+  top: -6px;
+}
+.nav-toggle .hamburger::after {
+  top: 6px;
+}
+
+/* responsive behavior */
+@media (max-width: 880px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 12px 16px 20px;
+    gap: 6px;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .lang {
+    display: none; /* language can be inside menu instead for small screens */
+  }
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* move language into nav links when open */
+  .nav-links .lang-inline {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+/* small polish for desktop */
+.nav-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.hero {
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  /* increased overlay darkness for better text contrast */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/hero.jpg") center/cover no-repeat;
+  position: relative;
+}
+/* subtle vertical vignette to keep image visible but text readable */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* vertical vignette for contrast */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+}
+.hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-content {
+  max-width: 720px;
+}
+.hero h1 {
+  margin: 0 0 12px 0;
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #fff;
+}
+.hero p {
+  margin: 0 0 20px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 0;
+}
+.btn-primary {
+  background: #ff6a00;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255, 106, 0, 0.18);
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+/* small screen adjustments */
+@media (max-width: 880px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: left;
+    padding: 36px 16px;
+  }
+  .hero {
+    min-height: 56vh;
+  }
+  .hero img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* REASONS SECTION */
+.reasons {
+  background: #070707;
+  color: #fff;
+  padding: 64px 16px;
+}
+.reasons .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.section-title {
+  font-size: 2rem;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+.section-sub {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 32px;
+  font-size: 0.95rem;
+}
+
+/* grid */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-top: 18px;
+}
+.reason {
+  text-align: center;
+  padding: 8px 12px;
+}
+.reason-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgb(248, 248, 248),
+    rgba(238, 234, 234, 0.658)
+  );
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+.reason-icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+.reason h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.reason p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  .reason-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Catalogue / product grid */
+.catalogue {
+  background: #0b0b0b;
+  color: #fff;
+  padding: 64px 16px;
+}
+.catalogue-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.catalogue-title {
+  font-size: 2rem;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+.catalogue-sub {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 28px;
+  font-size: 0.95rem;
+}
+
+/* grid */
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  align-items: start;
+  margin-top: 18px;
+}
+.product-card {
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+
+/* ensure link is a positioned container and accepts pointer events */
+.product-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #111;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
+/* wrapper creates the square aspect ratio */
+.product-thumb {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  background: #111;
+  pointer-events: none; /* image itself shouldn't block the link pointer events */
+}
+
+/* image fills the wrapper */
+.product-thumb img,
+.product-link img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: auto;
+}
+
+/* apply hover effect also when the whole card is hovered (more robust) */
+.product-card:hover .product-link,
+.product-link:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
+
+/* in case an invisible overlay is present, make sure the link sits above it */
+.product-card {
+  position: relative;
+  z-index: 0;
+}
+
+.product-code {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+/* Carousel (featured strip) */
+.carousel-section {
+  background: var(--bg);
+  padding: 48px 16px 64px;
+}
+.carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.carousel-viewport {
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 28px;
+  transition: transform 450ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: transform;
+  align-items: stretch;
+}
+.carousel-slide {
+  flex: 0 0 25%; /* overridden by JS for responsive counts */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.carousel-slide a.product-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+/* arrows */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+.carousel-prev {
+  left: 8px;
+}
+.carousel-next {
+  right: 8px;
+}
+
+/* dots */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+}
+.carousel-dots button.is-active {
+  background: #1e90ff;
+}
+
+/* Carousel titles */
+.carousel-section .container {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.carousel-title {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+.carousel-sub {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+}
+
+/* responsive sizing handled in JS but add fallback */
+@media (max-width: 980px) {
+  .carousel-slide {
+    flex: 0 0 50%;
+  }
+}
+@media (max-width: 560px) {
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+}
+
+/* Fix: make carousel anchors provide an aspect ratio so images are visible */
+.carousel-slide .product-link {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* 1:1 aspect ratio - change if you want different */
+  position: relative; /* anchor becomes the positioned container for the absolute img */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111;
+}
+
+.carousel-slide .product-link img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Divider between consecutive sections (subtle silver line) */
+section + section {
+  border-top: 1px solid rgba(192, 192, 192, 0.18); /* silver */
+}
+
+/* utility class to force divider on any block */
+.section-divider {
+  border-top: 1px solid rgba(192, 192, 192, 0.18);
+}
+
+/* Footer */
+.site-footer {
+  background: #050505;
+  color: var(--text);
+  padding: 48px 16px 24px;
+  border-top: 1px solid rgba(192, 192, 192, 0.12);
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 18px;
+}
+.footer-brand .logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+.footer-brand .logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.footer-desc {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 10px 0 14px;
+  font-size: 0.95rem;
+  max-width: 380px;
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+}
+.social-link {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  text-decoration: none;
+}
+.footer-links h4,
+.footer-contact h4,
+.footer-news h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-contact address {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+.footer-news p {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.news-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.news-form input[type="email"] {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: var(--text);
+  min-width: 0;
+  flex: 1;
+}
+.news-form .btn {
+  padding: 8px 12px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* small screens */
+@media (max-width: 980px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .news-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .news-form input,
+  .news-form .btn {
+    width: 100%;
+  }
+}
+
+/* Responsive improvements: better tablet & mobile behavior for all sections */
+
+/* Tablet (<= 1200px) — gentle adjustments for spacing and grids */
+@media (max-width: 1200px) {
+  .nav-container {
+    padding: 0 14px;
+  }
+  .hero-container {
+    padding: 40px 18px;
+    gap: 24px;
+  }
+  .reasons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .catalogue-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .footer-container {
+    max-width: 1100px;
+    padding-bottom: 16px;
+  }
+}
+
+/* Small tablets / large phones (<= 1024px) — stronger layout changes */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.08;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 16px;
+  }
+  .carousel-track {
+    gap: 20px;
+  }
+  .carousel-slide {
+    flex: 0 0 33.333%;
+  }
+  .product-thumb {
+    padding-bottom: 95%;
+  } /* keep product thumbs nearly square but slightly taller */
+  .product-code {
+    font-size: 0.92rem;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+/* Phone landscape / small screens (<= 880px) — existing mobile nav rules remain, add touch-friendly spacing */
+@media (max-width: 880px) {
+  .nav-container {
+    padding: 0 12px;
+  }
+  .nav-links a {
+    padding: 12px 16px;
+    border-radius: 10px;
+  } /* easier to tap */
+  .nav-links {
+    padding: 12px 16px 20px;
+    gap: 8px;
+  }
+  .hero {
+    min-height: 56vh;
+  }
+  .hero h1 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+  .hero p {
+    font-size: 0.98rem;
+  }
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .catalogue-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .product-thumb {
+    padding-bottom: 100%;
+  } /* keep clear squares for product tiles */
+  .carousel-slide {
+    flex: 0 0 50%;
+  }
+  .carousel-prev,
+  .carousel-next {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .news-form {
+    gap: 8px;
+  }
+}
+
+/* Small phones (<= 560px) — single-column stacks, reduce paddings and font sizes */
+@media (max-width: 560px) {
+  .hero-container {
+    padding: 28px 14px;
+    gap: 18px;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  .hero p {
+    font-size: 0.95rem;
+  }
+  .reasons-grid,
+  .catalogue-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .reason-icon {
+    width: 72px;
+    height: 72px;
+  }
+  .product-thumb {
+    padding-bottom: 100%;
+  }
+  .carousel-slide {
+    flex: 0 0 100%;
+  }
+  .carousel-track {
+    gap: 14px;
+    padding: 6px 0;
+  }
+  .carousel-prev,
+  .carousel-next {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  .news-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Very small devices (<= 420px) — final polish for comfortable reading & tapping */
+@media (max-width: 420px) {
+  :root {
+    --nav-height: 56px;
+  }
+  .nav-container {
+    height: var(--nav-height);
+    padding: 0 10px;
+  }
+  .logo {
+    font-size: 1rem;
+    gap: 6px;
+  }
+  .hero h1 {
+    font-size: 1.45rem;
+  }
+  .btn {
+    padding: 10px 14px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.95rem;
+  }
+  .reason h3 {
+    font-size: 1rem;
+  }
+  .reason p,
+  .product-code {
+    font-size: 0.9rem;
+  }
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding-top: 6px;
+  }
+}
+
+/* Utility: let images and media scale nicely inside constrained containers */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility: reduce large gaps on small devices */
+@media (max-width: 880px) {
+  .hero-actions {
+    gap: 10px;
+  }
+  .reasons,
+  .catalogue,
+  .carousel-section,
+  .site-footer {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

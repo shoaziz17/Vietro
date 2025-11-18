@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vietro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <a class="logo" href="#">
+          <img
+            src="logo.png"
+            alt="Vietro logo"
+            onerror="this.style.display='none'"
+          />
+          Vietro
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          title="Toggle navigation"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+
+        <ul id="primary-navigation" class="nav-links" role="menu">
+          <li role="none"><a role="menuitem" href="#home">Home</a></li>
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+
+          <!-- language inline for mobile -->
+          <li class="lang-inline" role="none" style="display: none">
+            <div class="lang">
+              <button
+                class="lang-btn"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                UZ ▾
+              </button>
+              <ul class="lang-menu" role="menu" aria-label="Language menu">
+                <li role="none">
+                  <button role="menuitem" data-lang="uz">O'zbek</button>
+                </li>
+                <li role="none">
+                  <button role="menuitem" data-lang="ru">Русский</button>
+                </li>
+                <li role="none">
+                  <button role="menuitem" data-lang="en">English</button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav-actions" style="gap: 8px">
+          <div class="lang">
+            <button class="lang-btn" aria-haspopup="true" aria-expanded="false">
+              EN ▾
+            </button>
+            <ul class="lang-menu" role="menu" aria-label="Language menu">
+              <li role="none">
+                <button role="menuitem" data-lang="uz">O'zbek</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" data-lang="ru">Русский</button>
+              </li>
+              <li role="none">
+                <button role="menuitem" data-lang="en">English</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" role="region" aria-label="Hero banner">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Premium Bathroom Fixtures & Design</h1>
+          <p>
+            Discover stylish, durable fixtures for every bathroom — from taps
+            and sinks to showers and accessories. Quality brands and expert
+            support to complete your project.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalogue" class="btn btn-primary" role="button"
+              >Catalogue</a
+            >
+            <a href="#contact" class="btn btn-secondary" role="button"
+              >Contacts</a
+            >
+          </div>
+        </div>
+
+        <!-- decorative image (keeps layout flexible) -->
+        <div class="hero-media" aria-hidden="true" style="display: none"></div>
+      </div>
+    </section>
+
+    <!-- Why choose us / Company benefits -->
+    <section id="why" class="reasons" role="region" aria-label="Why choose us">
+      <div class="container">
+        <h2 class="section-title">Choose Us — Grow Your Project</h2>
+        <p class="section-sub">
+          Four reasons customers trust our bathroom fixtures and service
+        </p>
+
+        <div class="reasons-grid" role="list">
+          <article class="reason" role="listitem">
+            <div class="reason-icon">
+              <img src="images/icons/guarantee.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Manufacturing Advantage</h3>
+            <p>
+              Two manufacturing bases, fast lead times and competitive pricing
+              for projects of any size.
+            </p>
+          </article>
+
+          <article class="reason" role="listitem">
+            <div class="reason-icon">
+              <img
+                src="images/icons/public-relation.png"
+                alt=""
+                aria-hidden="true"
+              />
+            </div>
+            <h3>Strong R&amp;D Capability</h3>
+            <p>
+              Professional R&amp;D team launching multiple new series monthly to
+              keep your offering fresh.
+            </p>
+          </article>
+
+          <article class="reason" role="listitem">
+            <div class="reason-icon">
+              <img src="images/icons/order.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Reliable Product Quality</h3>
+            <p>
+              Decades of experience delivering durable cabinets and fixtures
+              with extended service life.
+            </p>
+          </article>
+
+          <article class="reason" role="listitem">
+            <div class="reason-icon">
+              <img src="images/icons/agreement.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Quick Response</h3>
+            <p>
+              Fast replies and free initial design sketches — get a response
+              within 12 hours and concept in 3 days.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Catalogue -->
+    <section
+      id="catalogue"
+      class="catalogue"
+      role="region"
+      aria-label="Product catalogue"
+    >
+      <div class="catalogue-container">
+        <h2 class="catalogue-title">
+          New Arrival &amp; Fluted Design Bathroom Vanities
+        </h2>
+        <p class="catalogue-sub">
+          Hand-picked series — click a product for details
+        </p>
+
+        <div class="catalogue-grid" role="list">
+          <!-- repeat product card -->
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813036"
+              class="product-link"
+              aria-label="KL813036 details"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/mirrors/1.webp"
+                  alt="KL813036"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813036</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813027"
+              class="product-link"
+              aria-label="KL813027 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/2.webp"
+                  alt="KL813027"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813027</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813043"
+              class="product-link"
+              aria-label="KL813043 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/3.webp"
+                  alt="KL813043"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813043</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813026"
+              class="product-link"
+              aria-label="KL813026 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/4.webp"
+                  alt="KL813026"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813026</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813030"
+              class="product-link"
+              aria-label="KL813030 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/5.webp"
+                  alt="KL813030"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813030</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813033"
+              class="product-link"
+              aria-label="KL813033 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/6.webp"
+                  alt="KL813033"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813033</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813031"
+              class="product-link"
+              aria-label="KL813031 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/7.webp"
+                  alt="KL813031"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813031</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813040"
+              class="product-link"
+              aria-label="KL813040 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/8.webp"
+                  alt="KL813040"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813040</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured carousel -->
+    <section class="carousel-section" aria-label="Featured carousel">
+      <div class="container">
+        <h2 class="carousel-title">Featured Collections</h2>
+        <p class="carousel-sub">
+          Hand-picked highlights — swipe or wait for the autoplay
+        </p>
+      </div>
+
+      <div
+        class="carousel"
+        data-interval="3000"
+        aria-roledescription="carousel"
+      >
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <a href="#KL822187" class="product-link"
+                ><img src="images/mirrors/1.webp" alt="KL822187"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813021" class="product-link"
+                ><img src="images/mirrors/2.webp" alt="KL813021"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813023" class="product-link"
+                ><img src="images/mirrors/3.webp" alt="KL813023"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL810972-150" class="product-link"
+                ><img src="images/mirrors/4.webp" alt="KL810972-150"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813036" class="product-link"
+                ><img src="images/mirrors/5.webp" alt="KL813036"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813027" class="product-link"
+                ><img src="images/mirrors/6.webp" alt="KL813027"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813043" class="product-link"
+                ><img src="images/mirrors/7.webp" alt="KL813043"
+              /></a>
+            </div>
+            <div class="carousel-slide">
+              <a href="#KL813026" class="product-link"
+                ><img src="images/mirrors/8.webp" alt="KL813026"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-prev" aria-label="Previous slide">‹</button>
+        <button class="carousel-next" aria-label="Next slide">›</button>
+        <div
+          class="carousel-dots"
+          role="tablist"
+          aria-label="Carousel pages"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Sinks-->
+    <section
+      id="catalogue"
+      class="catalogue"
+      role="region"
+      aria-label="Product catalogue"
+    >
+      <div class="catalogue-container">
+        <h2 class="catalogue-title">
+          New Arrival &amp; Fluted Design Bathroom Vanities
+        </h2>
+        <p class="catalogue-sub">
+          Hand-picked series — click a product for details
+        </p>
+
+        <div class="catalogue-grid" role="list">
+          <!-- repeat product card -->
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813036"
+              class="product-link"
+              aria-label="KL813036 details"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/mirrors/1.webp"
+                  alt="KL813036"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813036</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813027"
+              class="product-link"
+              aria-label="KL813027 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/2.webp"
+                  alt="KL813027"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813027</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813043"
+              class="product-link"
+              aria-label="KL813043 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/3.webp"
+                  alt="KL813043"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813043</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a
+              href="#KL813026"
+              class="product-link"
+              aria-label="KL813026 details"
+            >
+              <div class="product-thumb">
+                <img
+                  class="product-img"
+                  src="images/mirrors/4.webp"
+                  alt="KL813026"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">KL813026</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a class="logo" href="#">
+            <img
+              src="logo.png"
+              alt="Vietro logo"
+              onerror="this.style.display='none'"
+            />
+            Vietro
+          </a>
+          <p class="footer-desc">
+            Quality bathroom fixtures and turnkey support for designers,
+            retailers and contractors.
+          </p>
+          <div class="footer-social" aria-label="Social links">
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-link"
+              title="Instagram"
+            >
+            </a>
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="social-link"
+              title="Facebook"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M15 3h3v4h-3v14h-5V7H8V3h3V1c0-1.1.9-2 2-2h2v4z"
+                  stroke="currentColor"
+                  stroke-width="1"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <address>
+            <div>Vietro Co.</div>
+            <div>123 Showroom Ave, Suite 5</div>
+            <div><a href="tel:+1234567890">+1 234 567 890</a></div>
+            <div>
+              <a href="mailto:info@vietro.example">info@vietro.example</a>
+            </div>
+          </address>
+        </div>
+        <div class="iframe">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d909.6865998677898!2d69.24500715430712!3d41.35590429942959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5a9323b4aa5cb98!2z0KLQsNGI0LrQtdC90YIsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1763479615325!5m2!1sru!2s"
+            width="500"
+            height="250"
+            style="border-radius: 8px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © <span id="year"></span> Vietro. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
