@@ -1,0 +1,152 @@
+{
+  "uz": {
+    "navbar": {
+      "link1": "Katalog",
+      "link2": "Aloqa"
+    },
+    "hero": {
+      "title": "Sifatli va ishonchli qurilish materiallari",
+      "subtitle": "Vietro qurilish materiallari do'koni sizga eng yaxshi mahsulotlarni taklif etadi.",
+      "button1": "Katalogni ko'rish",
+      "button2": "Aloqa"
+    },
+    "about": {
+      "title": "Biz haqimizda",
+      "subtitle": "Vietro qurilish materiallari do'koni sifatli va ishonchli mahsulotlarni taqdim etishga bag'ishlangan.",
+      "card1": {
+        "title": "Keng mahsulot assortimenti",
+        "description": "Biz turli qurilish materiallari, shu jumladan tsement, g'isht, yog'och va boshqalarni taklif etamiz."
+      },
+      "card2": {
+        "title": "Tajribali mutaxassislar",
+        "description": "Bizning jamoamiz sizga eng yaxshi mahsulotlarni tanlashda yordam berishga tayyor."
+      },
+      "card3": {
+        "title": "Mijozlarga xizmat ko'rsatish",
+        "description": "Biz mijozlarimizga yuqori darajadagi xizmat ko'rsatishga intilamiz."
+      },
+      "card4": {
+        "title": "Raqobatbardosh narxlar",
+        "description": "Biz sifatli mahsulotlarni maqbul narxlarda taqdim etamiz."
+      }
+    },
+    "mirror": {
+      "title": "Katalog",
+      "subtitle": "Bizning keng mahsulot assortimentimizni ko'rib chiqing."
+    },
+    "wall": {
+      "title": "Nexia 3 devor qoplamalari",
+      "description": "Nexia 3 devor qoplamalari yuqori sifatli"
+    },
+    "sink": {
+      "title": "Nexia 3 yuvinish joylari",
+      "description": "Nexia 3 yuvinish joylari zamonaviy dizayn va mustahkamlikni birlashtiradi."
+    },
+    "contact": {
+      "title": "Aloqa",
+      "subtitle": "Savollaringiz bormi? Biz bilan bog'laning!",
+      "address": "Manzil: Toshkent shahri, Amir Temur ko'chasi, 123-uy",
+      "phone": "Telefon: +998 90 123 45 67"
+    }
+  },
+  "ru": {
+    "navbar": {
+      "link1": "Каталог",
+      "link2": "Контакты"
+    },
+    "hero": {
+      "title": "Качественные и надёжные строительные материалы",
+      "subtitle": "Магазин строительных материалов Vietro предлагает вам лучшие товары.",
+      "button1": "Просмотреть каталог",
+      "button2": "Контакты"
+    },
+    "about": {
+      "title": "О нас",
+      "subtitle": "Магазин строительных материалов Vietro стремится предоставлять качественные и надёжные товары.",
+      "card1": {
+        "title": "Широкий ассортимент продукции",
+        "description": "Мы предлагаем различные строительные материалы, включая цемент, кирпич, древесину и другие."
+      },
+      "card2": {
+        "title": "Опытные специалисты",
+        "description": "Наша команда готова помочь вам выбрать лучшие товары."
+      },
+      "card3": {
+        "title": "Обслуживание клиентов",
+        "description": "Мы стремимся обеспечивать высокий уровень обслуживания клиентов."
+      },
+      "card4": {
+        "title": "Конкурентоспособные цены",
+        "description": "Мы предлагаем качественные изделия по доступным ценам."
+      }
+    },
+    "mirror": {
+      "title": "Каталог",
+      "subtitle": "Ознакомьтесь с нашим обширным ассортиментом продукции."
+    },
+    "wall": {
+      "title": "Покрытия для стен Nexia 3",
+      "description": "Покрытия для стен Nexia 3 высокого качества."
+    },
+    "sink": {
+      "title": "Умывальники Nexia 3",
+      "description": "Умывальники Nexia 3 сочетают современный дизайн и прочность."
+    },
+    "contact": {
+      "title": "Контакты",
+      "subtitle": "Есть вопросы? Свяжитесь с нами!",
+      "address": "Адрес: г. Ташкент, ул. Амир Темур, дом 123",
+      "phone": "Телефон: +998 90 123 45 67"
+    }
+  },
+  "en": {
+    "navbar": {
+      "link1": "Catalogue",
+      "link2": "Contact"
+    },
+    "hero": {
+      "title": "Quality and reliable building materials",
+      "subtitle": "Vietro building materials shop offers you the best products.",
+      "button1": "View catalogue",
+      "button2": "Contact"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Vietro building materials shop is dedicated to providing quality and reliable products.",
+      "card1": {
+        "title": "Wide product assortment",
+        "description": "We offer a variety of building materials, including cement, bricks, timber and more."
+      },
+      "card2": {
+        "title": "Experienced specialists",
+        "description": "Our team is ready to help you choose the best products."
+      },
+      "card3": {
+        "title": "Customer service",
+        "description": "We strive to deliver a high level of customer service."
+      },
+      "card4": {
+        "title": "Competitive prices",
+        "description": "We provide quality products at affordable prices."
+      }
+    },
+    "mirror": {
+      "title": "Catalogue",
+      "subtitle": "Browse our extensive product range."
+    },
+    "wall": {
+      "title": "Nexia 3 wall coverings",
+      "description": "Nexia 3 wall coverings of high quality."
+    },
+    "sink": {
+      "title": "Nexia 3 washbasins",
+      "description": "Nexia 3 washbasins combine modern design and durability."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Have questions? Get in touch!",
+      "address": "Address: Tashkent, Amir Temur Street, 123",
+      "phone": "Phone: +998 90 123 45 67"
+    }
+  }
+}

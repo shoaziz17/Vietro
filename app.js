@@ -201,3 +201,116 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoplay();
   }
 });
+
+(async function () {
+  const LANG_STORAGE_KEY = "site_lang";
+  const translations = await fetch("./translation.json")
+    .then((r) => r.json())
+    .catch(() => ({}));
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.getElementById("primary-navigation");
+  const langInline = document.querySelector(".lang-inline");
+  const allLangButtons = Array.from(
+    document.querySelectorAll(".lang-menu [data-lang]")
+  );
+  const langToggles = Array.from(document.querySelectorAll(".lang-btn"));
+
+  function getPreferredLang() {
+    const stored = localStorage.getItem(LANG_STORAGE_KEY);
+    if (stored && translations[stored]) return stored;
+    const nav = (navigator.language || navigator.userLanguage || "en")
+      .slice(0, 2)
+      .toLowerCase();
+    if (translations[nav]) return nav;
+    return "en";
+  }
+
+  function getByPath(obj, path) {
+    return path
+      .split(".")
+      .reduce((o, p) => (o && p in o ? o[p] : undefined), obj);
+  }
+
+  function updateTexts(lang) {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const val = getByPath(translations[lang], key);
+      if (val !== undefined) {
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") el.value = val;
+        else el.textContent = val;
+      }
+    });
+    // update visible lang buttons labels
+    langToggles.forEach((btn) => (btn.textContent = lang.toUpperCase() + " ▾"));
+  }
+
+  function setLang(lang) {
+    if (!translations[lang]) return;
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+    updateTexts(lang);
+  }
+
+  // initialize
+  const initialLang = getPreferredLang();
+  setLang(initialLang);
+
+  // open/close mobile nav and show inline language item when opened
+  if (navToggle && navLinks && langInline) {
+    navToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      // mobile inline language visibility (simple, avoids changing CSS)
+      langInline.style.display = open ? "block" : "none";
+    });
+  }
+
+  // language dropdown toggles
+  document.addEventListener("click", (e) => {
+    // toggle a lang menu
+    if (e.target.matches(".lang-btn")) {
+      const parent = e.target.closest(".lang");
+      const isOpen = parent.classList.toggle("open");
+      e.target.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      return;
+    }
+
+    // language selection click
+    if (e.target.matches(".lang-menu [data-lang]")) {
+      const chosen = e.target.getAttribute("data-lang");
+      setLang(chosen);
+      // close all lang menus
+      document.querySelectorAll(".lang.open").forEach((el) => {
+        el.classList.remove("open");
+        const btn = el.querySelector(".lang-btn");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+      return;
+    }
+
+    // click outside: close any open language menus
+    if (!e.target.closest(".lang")) {
+      document.querySelectorAll(".lang.open").forEach((el) => {
+        el.classList.remove("open");
+        const btn = el.querySelector(".lang-btn");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
+  // keyboard support: close menu on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".lang.open").forEach((el) => {
+        el.classList.remove("open");
+        const btn = el.querySelector(".lang-btn");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+      if (navLinks) {
+        navLinks.classList.remove("open");
+        navToggle && navToggle.setAttribute("aria-expanded", "false");
+        langInline && (langInline.style.display = "none");
+      }
+    }
+  });
+})();

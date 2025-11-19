@@ -245,14 +245,18 @@ body {
   line-height: 1.05;
   font-weight: 800;
   color: #fff;
+  text-align: center;
 }
 .hero p {
   margin: 0 0 20px 0;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.05rem;
+  text-align: center;
 }
 .hero-actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -268,10 +272,19 @@ body {
   color: #fff;
   box-shadow: 0 6px 18px rgba(255, 106, 0, 0.18);
 }
+
+.btn-primary:hover {
+  background: #ff7f24;
+}
+
 .btn-secondary {
   background: transparent;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 /* small screen adjustments */
 @media (max-width: 880px) {
