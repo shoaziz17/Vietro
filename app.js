@@ -314,3 +314,122 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 })();
+
+/* Lightbox viewer for catalogue images */
+(function () {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox) return;
+  const imgEl = lightbox.querySelector(".lightbox-img");
+  const captionEl = lightbox.querySelector(".lightbox-caption");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const prevBtn = lightbox.querySelector(".lightbox-prev");
+  const nextBtn = lightbox.querySelector(".lightbox-next");
+  const content = lightbox.querySelector(".lightbox-content");
+
+  // collect all catalogue images in order
+  const images = Array.from(
+    document.querySelectorAll(".catalogue .product-card img.product-img")
+  ).map((img) => {
+    const card = img.closest(".product-card");
+    const code = card
+      ? card.querySelector(".product-code")?.textContent || ""
+      : "";
+    return {
+      img,
+      src: img.getAttribute("src"),
+      alt: img.getAttribute("alt") || "",
+      caption: code.trim(),
+    };
+  });
+
+  let current = -1;
+
+  function openAt(index) {
+    if (index < 0 || index >= images.length) return;
+    current = index;
+    const item = images[current];
+    imgEl.src = item.src;
+    imgEl.alt = item.alt || item.caption || "Image";
+    captionEl.textContent = item.caption || item.alt || "";
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    content.focus();
+  }
+
+  function close() {
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    imgEl.src = "";
+    current = -1;
+  }
+
+  function prev() {
+    if (current <= 0) current = images.length - 1;
+    else current--;
+    openAt(current);
+  }
+  function next() {
+    if (current >= images.length - 1) current = 0;
+    else current++;
+    openAt(current);
+  }
+
+  // UPDATED click handler: catch clicks anywhere inside a product-card (anchor or image)
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest(".catalogue .product-card");
+    if (!card) return; // not a catalogue card click
+
+    // prevent link navigation when clicking the card/thumb
+    const link = card.querySelector(".product-link");
+    if (link) e.preventDefault();
+
+    const thumbImg =
+      card.querySelector("img.product-img") || card.querySelector("img");
+    if (!thumbImg) return;
+
+    const idx = images.findIndex((it) => it.img === thumbImg);
+    if (idx !== -1) openAt(idx);
+  });
+
+  // controls
+  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    prev();
+  });
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    next();
+  });
+
+  // close when clicking outside content
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  // keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox || lightbox.getAttribute("aria-hidden") === "true") return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+
+  // preload neighbor images for smooth nav
+  function preload(n) {
+    const s = images[n]?.src;
+    if (!s) return;
+    const i = new Image();
+    i.src = s;
+  }
+  const observer = new MutationObserver(() => {
+    if (current >= 0) {
+      preload((current + 1) % images.length);
+      preload((current - 1 + images.length) % images.length);
+    }
+  });
+  observer.observe(lightbox, {
+    attributes: true,
+    attributeFilter: ["aria-hidden"],
+  });
+})();

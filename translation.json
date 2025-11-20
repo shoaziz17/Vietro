@@ -12,10 +12,10 @@
     },
     "about": {
       "title": "Biz haqimizda",
-      "subtitle": "Vietro qurilish materiallari do'koni sifatli va ishonchli mahsulotlarni taqdim etishga bag'ishlangan.",
+      "subtitle": "Vietro santexnika materiallari do'koni sifatli va ishonchli mahsulotlarni taqdim etishga bag'ishlangan.",
       "card1": {
         "title": "Keng mahsulot assortimenti",
-        "description": "Biz turli qurilish materiallari, shu jumladan tsement, g'isht, yog'och va boshqalarni taklif etamiz."
+        "description": "Biz turli santexnika materiallari, shu jumladan rakovina, unitaz, jomraklar, dushlar va boshqalarni taklif etamiz."
       },
       "card2": {
         "title": "Tajribali mutaxassislar",
@@ -62,10 +62,10 @@
     },
     "about": {
       "title": "О нас",
-      "subtitle": "Магазин строительных материалов Vietro стремится предоставлять качественные и надёжные товары.",
+      "subtitle": "Магазин сантехнических товаров Vietro стремится предоставлять качественную и надежную продукцию.",
       "card1": {
         "title": "Широкий ассортимент продукции",
-        "description": "Мы предлагаем различные строительные материалы, включая цемент, кирпич, древесину и другие."
+        "description": "Мы предлагаем широкий ассортимент сантехнических принадлежностей, включая раковины, унитазы, смесители, душевые кабины и многое другое."
       },
       "card2": {
         "title": "Опытные специалисты",
@@ -106,7 +106,7 @@
     },
     "hero": {
       "title": "Quality and reliable building materials",
-      "subtitle": "Vietro building materials shop offers you the best products.",
+      "subtitle": "Vietro plumbing supplies store is dedicated to providing quality and reliable products.",
       "button1": "View catalogue",
       "button2": "Contact"
     },
@@ -115,7 +115,7 @@
       "subtitle": "Vietro building materials shop is dedicated to providing quality and reliable products.",
       "card1": {
         "title": "Wide product assortment",
-        "description": "We offer a variety of building materials, including cement, bricks, timber and more."
+        "description": "We offer a variety of plumbing supplies, including sinks, toilets, faucets, showers, and more."
       },
       "card2": {
         "title": "Experienced specialists",
