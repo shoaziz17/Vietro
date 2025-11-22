@@ -5,8 +5,8 @@
       "link2": "Aloqa"
     },
     "hero": {
-      "title": "Sifatli va ishonchli qurilish materiallari",
-      "subtitle": "Vietro qurilish materiallari do'koni sizga eng yaxshi mahsulotlarni taklif etadi.",
+      "title": "Sifatli va ishonchli santexnika materiallari",
+      "subtitle": "Vietro santexnika materiallari do'koni sizga eng yaxshi mahsulotlarni taklif etadi.",
       "button1": "Katalogni ko'rish",
       "button2": "Aloqa"
     },
@@ -35,18 +35,30 @@
       "subtitle": "Bizning keng mahsulot assortimentimizni ko'rib chiqing."
     },
     "wall": {
-      "title": "Nexia 3 devor qoplamalari",
-      "description": "Nexia 3 devor qoplamalari yuqori sifatli"
+      "title": "Oynalar",
+      "description": "Yuqori sifatli devor uchun oynalar"
     },
     "sink": {
-      "title": "Nexia 3 yuvinish joylari",
-      "description": "Nexia 3 yuvinish joylari zamonaviy dizayn va mustahkamlikni birlashtiradi."
+      "title": "Jomraklar",
+      "description": "Zanglashga qarshi chidamlilik va zamonaviy dizaynlik jomraklar."
+    },
+    "vanna": {
+      "title": "Vannalar",
+      "description": "Quyma shishadan yasalgan yuqori sifatli vannalar."
+    },
+    "rakvina": {
+      "title": "Rakovinalar",
+      "description": "Zamonaviy dizayn va mustahkamlikni birlashtirgan rakovinalar."
     },
     "contact": {
       "title": "Aloqa",
       "subtitle": "Savollaringiz bormi? Biz bilan bog'laning!",
       "address": "Manzil: Toshkent shahri, Amir Temur ko'chasi, 123-uy",
-      "phone": "Telefon: +998 90 123 45 67"
+      "phone": "Telefon: +998 90 123 45 67",
+      "call-us": "Aloqa"
+    },
+    "footer": {
+      "subtitle": "Sifatli va ishonchli santexnika materiallari do'koni"
     }
   },
   "ru": {

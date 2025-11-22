@@ -6,6 +6,10 @@
     <title>Vietro</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="images/logo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
   </head>
   <body>
     <!--Navbar-->
@@ -501,8 +505,10 @@
       aria-label="Accessories catalogue"
     >
       <div class="catalogue-container">
-        <h2 class="catalogue-title">Bathroom Accessories & New Series</h2>
-        <p class="catalogue-sub">
+        <h2 class="catalogue-title" data-i18n="vanna.title">
+          Bathroom Accessories & New Series
+        </h2>
+        <p class="catalogue-sub" data-i18n="vanna.description">
           Selected accessories — click a product for details
         </p>
 
@@ -578,40 +584,92 @@
       </div>
     </section>
 
+    <!-- Additional Sinks Catalogue (same structure as accessories) -->
+    <section
+      id="sinks"
+      class="catalogue"
+      role="region"
+      aria-label="Sinks catalogue"
+    >
+      <div class="catalogue-container">
+        <h2 class="catalogue-title" data-i18n="rakvina.title">
+          Sinks &amp; Vanities Collection
+        </h2>
+        <p class="catalogue-sub" data-i18n="rakvina.description">
+          Selected sinks — click a product for details
+        </p>
+
+        <div class="catalogue-grid" role="list">
+          <figure class="product-card" role="listitem">
+            <a href="#SK1001" class="product-link" aria-label="SK1001 details">
+              <div class="product-thumb">
+                <img
+                  src="images/sinks/1.webp"
+                  alt="SK1001"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">SK1001</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a href="#SK1002" class="product-link" aria-label="SK1002 details">
+              <div class="product-thumb">
+                <img
+                  src="images/sinks/2.webp"
+                  alt="SK1002"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">SK1002</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a href="#SK1003" class="product-link" aria-label="SK1003 details">
+              <div class="product-thumb">
+                <img
+                  src="images/sinks/3.webp"
+                  alt="SK1003"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">SK1003</figcaption>
+          </figure>
+
+          <figure class="product-card" role="listitem">
+            <a href="#SK1004" class="product-link" aria-label="SK1004 details">
+              <div class="product-thumb">
+                <img
+                  src="images/sinks/4.webp"
+                  alt="SK1004"
+                  class="product-img"
+                />
+              </div>
+            </a>
+            <figcaption class="product-code">SK1004</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section" aria-label="Contact">
       <div class="contact-container">
         <div class="contact-info">
-          <h2>Contact Us</h2>
-          <p>Reach out for inquiries, orders or design support.</p>
+          <h2 data-i18n="contact.title">Contact Us</h2>
+          <p data-i18n="contact.subtitle">
+            Reach out for inquiries, orders or design support.
+          </p>
           <address>
-            <strong>Vietro Co.</strong><br />
-            123 Showroom Ave, Suite 5<br />
-            <a href="tel:+1234567890">+1 234 567 890</a><br />
-            <a href="mailto:info@vietro.example">info@vietro.example</a>
+            <strong>Vietro Uzbekistan</strong><br />
+            <p data-i18n="contact.address"></p>
+            <a href="tel:+1234567890">+998 90 359 28 70</a><br />
+            <a href="tel:+1234567890">+998 77 745 00 02</a><br />
+            <a href="mailto:info@vietro.example">info@vietro.uz</a>
           </address>
-
-          <form
-            class="contact-form"
-            action="#"
-            method="post"
-            onsubmit="event.preventDefault(); alert('Message sent (demo)');"
-          >
-            <input type="text" name="name" placeholder="Your name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-            />
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Message"
-              required
-            ></textarea>
-            <button class="btn btn-primary" type="submit">Send Message</button>
-          </form>
         </div>
 
         <div class="contact-map">
@@ -639,37 +697,37 @@
               onerror="this.style.display='none'"
             />Vietro
           </a>
-          <p class="footer-desc">
+          <p class="footer-desc" data-i18n="footer.subtitle">
             Quality bathroom fixtures and turnkey support for designers,
             retailers and contractors.
           </p>
           <div class="footer-social" aria-label="Social links">
             <a
-              href="#"
+              href="https://www.instagram.com/vietro_uzbekistan/"
               aria-label="Instagram"
               class="social-link"
               title="Instagram"
+              target="_blank"
             >
+              <i class="fa-brands fa-instagram"></i>
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/vietro_uzbekistan/"
               aria-label="Facebook"
               class="social-link"
               title="Facebook"
+              target="_blank"
             >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M15 3h3v4h-3v14h-5V7H8V3h3V1c0-1.1.9-2 2-2h2v4z"
-                  stroke="currentColor"
-                  stroke-width="1"
-                />
-              </svg>
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              href="https://t.me/d_shaumarov78"
+              aria-label="Facebook"
+              class="social-link"
+              title="Facebook"
+              target="_blank"
+            >
+              <i class="fa-brands fa-telegram"></i>
             </a>
           </div>
         </div>
@@ -723,7 +781,7 @@
           stroke-linejoin="round"
         />
       </svg>
-      <span class="call-text">Call us</span>
+      <span class="call-text" data-i18n="contact.call-us">Call us</span>
     </a>
 
     <!-- Image lightbox (catalogue viewer) -->
