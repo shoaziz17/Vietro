@@ -53,8 +53,8 @@
     "contact": {
       "title": "Aloqa",
       "subtitle": "Savollaringiz bormi? Biz bilan bog'laning!",
-      "address": "Manzil: Toshkent shahri, Amir Temur ko'chasi, 123-uy",
-      "phone": "Telefon: +998 90 123 45 67",
+      "address": "Manzil: Toshkent shahri, Usta Shirin koʻchasi, 125/2-7",
+      "phone": "Telefon: +998 90 359 28 70",
       "call-us": "Aloqa"
     },
     "footer": {
@@ -108,7 +108,8 @@
       "title": "Контакты",
       "subtitle": "Есть вопросы? Свяжитесь с нами!",
       "address": "Адрес: г. Ташкент, ул. Амир Темур, дом 123",
-      "phone": "Телефон: +998 90 123 45 67"
+      "phone": "Телефон: +998 90 359 28 70",
+      "call-us": "Связаться"
     }
   },
   "en": {
@@ -158,7 +159,8 @@
       "title": "Contact",
       "subtitle": "Have questions? Get in touch!",
       "address": "Address: Tashkent, Amir Temur Street, 123",
-      "phone": "Phone: +998 90 123 45 67"
+      "phone": "Phone: +998 90 123 45 67",
+      "call-us": "Contact"
     }
   }
 }
